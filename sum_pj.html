@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산</title>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+function sum(){
+    var a = $('[name="a"]').val();
+    var b = $('[name="b"]').val();
+    var c = $('[name="c"]').val();
+    var d = $('[name="d"]').val();
+    var e = $('[name="e"]').val();
+    var f = $('[name="f"]').val();
+    var g = $('[name="g"]').val();
+
+    var sum1= Number(a) + Number(b) + Number(c);
+    var sum2= Number(d) + Number(e);
+    var sum3= Number(f) + Number(g);
+
+    $('[name="sum1"]').val(sum1);
+    $('[name="sum2"]').val(sum2);
+    $('[name="sum3"]').val(sum3);
+}
+
+function reset(){
+    for(var i=0; i<10; i++){
+        document.querySelectorAll("input[type=text]")[i].value="";
+    }
+} 
+    
+</script>
+</head>
+<body>
+
+<h2>계산</h2>
+
+<table>
+    <tr>
+        <th></th>
+        <th>법인세</th>
+        <th>지방세</th>
+        <th>농특세</th>
+    </tr>
+    <tr>
+        <td>총부담세액</td>
+        <td><input type="text" style="ime-mode:disabled;" name="a"></td>
+        <td><input type="text" style="ime-mode:disabled;" name="b"></td>
+        <td><input type="text" style="ime-mode:disabled;" name="c"></td>
+    </tr>
+    <tr>
+        <td>기납부세액</td>
+        <td><input type="text" style="ime-mode:disabled;" name="d"></td>
+        <td><input type="text" style="ime-mode:disabled;" name="e"></td>
+    </tr>
+    <tr>
+        <td>차감납부할세액</td>
+        <td><input type="text" style="ime-mode:disabled;" name="f"></td>
+        <td><input type="text" style="ime-mode:disabled;" name="g"></td>
+    </tr>
+</table>
+
+<button name="button" class="text" onclick="sum()">계산하기</button>
+<button type="reset"  onclick="reset()">초기화</button>
+<table>
+    <tr>
+        <th></th>
+        <th>차변</th>
+    </tr>
+    <tr>
+        <td>법인세등</td>
+        <td><input type="text" name="sum1" value=""></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th></th>
+        <th>대변</th>
+    </tr>
+    <tr>
+        <td>선납세금</td>
+        <td><input type="text" name="sum2" value=""></td>
+    </tr>
+    <tr>
+        <td>미지급세금</td>
+        <td><input type="text" name="sum3" value=""></td>
+    </tr>
+</table>
+
+</body>
+</html>
